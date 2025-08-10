@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is '/Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.blg'
-[28] biber-darwin:340> INFO - === Mon Aug 11, 2025, 00:07:44
-[35] Biber.pm:419> INFO - Reading '/Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.bcf'
-[69] Biber.pm:976> INFO - Using all citekeys in bib section 0
-[74] Biber.pm:4419> INFO - Processing section 0
-[78] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[78] bibtex.pm:1713> INFO - LaTeX decoding ...
-[80] bibtex.pm:1519> INFO - Found BibTeX data source '/Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/bibliography.bib'
-[89] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[89] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[89] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[89] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[93] bbl.pm:660> INFO - Writing '/Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.bbl' with encoding 'UTF-8'
-[94] bbl.pm:763> INFO - Output to /Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.bbl
+[26] biber-darwin:340> INFO - === Mon Aug 11, 2025, 00:22:07
+[31] Biber.pm:419> INFO - Reading '/Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.bcf'
+[62] Biber.pm:976> INFO - Using all citekeys in bib section 0
+[67] Biber.pm:4419> INFO - Processing section 0
+[71] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[71] bibtex.pm:1713> INFO - LaTeX decoding ...
+[72] bibtex.pm:1519> INFO - Found BibTeX data source '/Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/bibliography.bib'
+[81] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[81] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[81] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[81] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[84] bbl.pm:660> INFO - Writing '/Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.bbl' with encoding 'UTF-8'
+[85] bbl.pm:763> INFO - Output to /Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.bbl

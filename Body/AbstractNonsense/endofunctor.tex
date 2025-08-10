@@ -12,14 +12,14 @@
     \par Let $T : \mathcal{C} \to \mathcal{C}$ be an endofunctor.
     \vspace{0.5 \baselineskip}
     \pause
-    \par An \strong{algebra} for $T$ is an arrow $a \xrightarrow{\alpha} T(a)$ in $\mathcal{C}$.
+    \par An \strong{algebra} for $T$ is an arrow $T(a) \xrightarrow{\alpha} a$ in $\mathcal{C}$.
     \vspace{0.5 \baselineskip}
     \pause
-    \par A \strong{morphism} from $a \xrightarrow{\alpha} T(a)$ to $b \xrightarrow{\beta} T(b)$ is an arrow $f : a \to b$ in $\mathcal{C}$ such that this commutes:
+    \par A \strong{morphism} from $T(a) \xrightarrow{\alpha} a$ to $T(b) \xrightarrow{\beta} b$ is an arrow $f : a \to b$ in $\mathcal{C}$ such that this commutes:
     \begin{align*}
       \begin{tikzcd}[cramped, ampersand replacement = \;]
-        a \arrow[r, "\alpha"] \arrow[d, "f"'] \; T(a) \arrow[d, "T(f)"] \\
-        b \arrow[r, "\beta"'] \; T(b)
+        T(a) \arrow[r, "\alpha"] \arrow[d, "T(f)"'] \; a \arrow[d, "f"] \\
+        T(b) \arrow[r, "\beta"'] \; b
       \end{tikzcd}
     \end{align*}
     \vspace{-0.5 \baselineskip}
@@ -41,7 +41,7 @@
   
   \begin{block}{Recursion}
 
-    \par An \strong{initial algebra} for $T$ is an initial object $i \xrightarrow{\cons} T(i)$ in the category of $T$-algebras.
+    \par An \strong{initial algebra} for $T$ is an initial object $T(i) \xrightarrow{\cons} i$ in the category of $T$-algebras.
     \vspace{0.5 \baselineskip}
     \pause
     \par The \strong{recursion principle} is its universal property.
@@ -54,7 +54,7 @@
   
   \begin{block}{Induction}
     
-    \par Let $i \xrightarrow{\cons} T(i)$ be an initial algebra.
+    \par Let $T(i) \xrightarrow{\cons} i$ be an initial algebra.
     \par Let $f, g : i \to a$ in $\mathcal{C}$.
     \par Suppose the equaliser $\iota : e \rightarrowtail i$ of $f$ and $g$ exists in $\mathcal{C}$, and that $f \circ \cons \circ T(\iota) = g \circ \cons \circ T(\iota)$:
     \vspace{-0.5 \baselineskip}
