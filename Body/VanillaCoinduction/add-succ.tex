@@ -1,0 +1,85 @@
+% Agenda:
+%   [x] $\forall x \in \coN, \pred(x + y) = x + \pred(y)$ whenever $\pred(y) \neq \no$.
+
+\renewcommand{\currentGoal}{$\forall x, y, y' \in \coN$, if $\pred(y) = y' \neq \no$, then $\pred(x + y) = x + y'$}
+
+\begin{frame}[t]{Coinduction into $\coN$} % .;
+  \simpleCoindNBlock
+
+  \begin{itemize}
+    \item[$(*)$] {
+      $\pred(a + b) = \pred(b)$ whenever $\pred(a) = \no$
+    }
+    \item[$(**)$] {
+      $\pred(a + b) = \pred(a) + b$ whenever $\pred(a) \neq \no$
+    }
+  \end{itemize}
+
+  \vspace{0.5\baselineskip}
+
+  \par\textbf{Proof that \currentGoal.}
+  
+\end{frame}
+
+\begin{frame}[t]{Coinduction into $\coN$} % .;
+  \simpleCoindNBlock
+
+  \vspace{0.5 \baselineskip}
+
+  \par\textbf{Proof that \currentGoal.}
+  \vspace{0.5\baselineskip}
+  \par Set $X := \set*{(x, y, y') \in \coN^3 \given \pred(y) = y' }$
+  \vspace{0.5\baselineskip}
+  \par Define $\lhs (x, y, y') := \pred(x + y)$ and $\rhs (x, y, y') := x + y'$.
+  
+\end{frame}
+
+% \begin{frame}[t]{Coinduction into $\coN$: \currentGoal} % .;
+%   \simpleCoindNBlock
+
+%   \begin{itemize}
+%     \item[$(**)$] {
+%       $\pred(x + y) = \pred(x) + y$ whenever $\pred(x) \neq \no$
+%     }
+%   \end{itemize}
+
+%   \vspace{0.5 \baselineskip}
+
+%   \par\textbf{Proof that \currentGoal.}
+%   \par Set $\lhs : x \mapsto x + 0$ and $\rhs : x \mapsto x$.
+%   \begin{itemize}[]
+%     \item[$\bullet$] {
+%       If instead $\pred(x) \neq \no$, then
+%       \begin{align*}
+%         [\pred(\lhs(x))]
+%         &= \textcolor{red!50!white}{[\pred(x + 0)]}
+%         \\
+%         &= \textcolor{orange!50!white}{[\pred(x) + 0]}
+%         \\
+%         &= \textcolor{green}{[\lhs(\pred(x))]}
+%         \\
+%         &= \textcolor{cyan!50!white}{[\rhs(\pred(x))]}
+%         \\
+%         &= \textcolor{blue!50!white}{[\pred(x)]}
+%         \\
+%         [\pred(\lhs(x))]
+%         &= \textcolor{pink}{[\pred(\rhs(x))]}
+%       \end{align*}
+%     }
+%   \end{itemize}
+  
+% \end{frame}
+
+% \begin{frame}[t]{Coinduction into $\coN$} % .;
+%   \simpleCoindNBlock
+
+%   \par\textbf{Proof that \currentGoal.}
+%   \par Set $\lhs : x \mapsto x + 0$ and $\rhs : x \mapsto x$.
+%   \begin{itemize}
+%     \item[$\bullet$] {
+%       The theorem asserts $\lhs = \rhs$.
+%       \qed
+%     }
+%   \end{itemize}
+  
+% \end{frame}

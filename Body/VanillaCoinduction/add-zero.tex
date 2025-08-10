@@ -1,0 +1,105 @@
+% Agenda:
+%   [x] $\forall x \in \coN, x + 0 = x$
+
+\renewcommand{\currentGoal}{$\forall x \in \coN,\, x + 0 = x$}
+
+\begin{frame}[t]{Coinduction into $\coN$: \currentGoal} % .;
+  \simpleCoindNBlock
+
+  \begin{itemize}
+    \item[$(*)$] {
+      $\pred(x + 0) = \no$ whenever $\pred(x) = \no$
+    }
+    \item[$(**)$] {
+      $\pred(x + y) = \pred(x) + y$ whenever $\pred(x) \neq \no$
+    }
+  \end{itemize}
+
+  \vspace{0.5\baselineskip}
+
+  \par\textbf{Proof that \currentGoal.}
+  
+\end{frame}
+
+\begin{frame}[t]{Coinduction into $\coN$: \currentGoal} % .;
+  \simpleCoindNBlock
+
+  \begin{itemize}
+    \item[$(*)$] {
+      $\pred(x + 0) = \no$ whenever $\pred(x) = \no$
+    }
+  \end{itemize}
+
+  \vspace{0.5 \baselineskip}
+
+  \par\textbf{Proof that \currentGoal.}
+  \par Set $\lhs : x \mapsto x + 0$ and $\rhs : x \mapsto x$.
+  \pause
+  \begin{itemize}[]
+    \item[$\bullet$] {
+      If $\pred(x) = \no$, then
+      \begin{align*}
+        [\pred(\lhs(x))]
+        &= [\pred(x + 0)]
+        \\
+        &= [\no]
+        \\
+        &= [\pred(x)]
+        \\
+        [\pred(\lhs(x))]
+        &= [\pred(\rhs(x))]
+      \end{align*}
+    }
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}[t]{Coinduction into $\coN$: \currentGoal} % .;
+  \simpleCoindNBlock
+
+  \begin{itemize}
+    \item[$(**)$] {
+      $\pred(x + y) = \pred(x) + y$ whenever $\pred(x) \neq \no$
+    }
+  \end{itemize}
+
+  \vspace{0.5 \baselineskip}
+
+  \par\textbf{Proof that \currentGoal.}
+  \par Set $\lhs : x \mapsto x + 0$ and $\rhs : x \mapsto x$.
+  \begin{itemize}[]
+    \item[$\bullet$] {
+      If instead $\pred(x) \neq \no$, then
+      \begin{align*}
+        [\pred(\lhs(x))]
+        &= \textcolor{red!50!white}{[\pred(x + 0)]}
+        \\
+        &= \textcolor{orange!50!white}{[\pred(x) + 0]}
+        \\
+        &= \textcolor{green}{[\lhs(\pred(x))]}
+        \\
+        &= \textcolor{cyan!50!white}{[\rhs(\pred(x))]}
+        \\
+        &= \textcolor{blue!50!white}{[\pred(x)]}
+        \\
+        [\pred(\lhs(x))]
+        &= \textcolor{pink}{[\pred(\rhs(x))]}
+      \end{align*}
+    }
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}[t]{Coinduction into $\coN$: \currentGoal} % .;
+  \simpleCoindNBlock
+
+  \par\textbf{Proof that \currentGoal.}
+  \par Set $\lhs : x \mapsto x + 0$ and $\rhs : x \mapsto x$.
+  \begin{itemize}
+    \item[$\bullet$] {
+      The theorem asserts $\lhs = \rhs$.
+      \qed
+    }
+  \end{itemize}
+  
+\end{frame}

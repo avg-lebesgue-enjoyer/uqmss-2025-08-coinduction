@@ -1,0 +1,45 @@
+% Agenda:
+%   [x] List other provable properties
+
+\begin{frame}{Other properties of $\coN$} % .;
+
+  \par These can be proven coinductively:
+  \begin{itemize}
+    \item[$\bullet$] {
+      $\pred(x + y) = x + \pred(y)$ whenever $\pred(y) \neq \no$.
+    }
+    \item[$\bullet$] {
+      $+$ is associative.
+    }
+    \item[$\bullet$] {
+      If $x, y$ are (finite or infinite) sequences, then $\mathrm{length}(x \mathbin{++} y) = \mathrm{length}(x) + \mathrm{length}(y)$.
+    }
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}{Other properties of $\coN$} % .;
+
+  \par Coinductive proofs only involve $\leq 2$ cases:
+  \begin{itemize}
+    \item[$\bullet$] $\pred(\text{something}) = \no$
+    \item[$\bullet$] $\pred(\text{something}) \neq \no$
+  \end{itemize}
+  and sometimes no splits at all!
+
+  \pause
+
+  \vspace{\baselineskip}
+  
+  \par Contrast against inductive-plus-infinity proofs with $3$ cases:
+  \begin{itemize}
+    \item[$\bullet$] $(\text{something}) = 0$
+    \item[$\bullet$] $(\text{something}) = \Succ(\text{something else})$
+    \item[$\bullet$] $(\text{something}) = \infty$
+  \end{itemize}
+  
+  \vspace{\baselineskip}
+  
+  \par Why induct when you could coinduct?
+  
+\end{frame}

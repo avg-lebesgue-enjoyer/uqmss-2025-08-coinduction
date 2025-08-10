@@ -1,0 +1,136 @@
+% Agenda:
+%   [x] $\forall x, y \in \coN, x + y = y + x$
+
+\renewcommand{\currentGoal}{$\forall x, y \in \coN,\, x + y = y + x$}
+
+\begin{frame}[t]{Coinduction into $\coN$: \currentGoal} % .;
+  \simpleCoindNBlock
+
+  \begin{itemize}
+    \item[$\bullet$] {
+      $\pred(a + b) = \pred(b)$ whenever $\pred(a) = \no$
+    }
+    \item[$\bullet$] {
+      $\pred(a + b) = \pred(a)$ whenever $\pred(b) = \no$
+    }
+    \item[$\bullet$] {
+      $\pred(a + b) = \pred(a) + b$ whenever $\pred(a) \neq \no$
+    }
+    \item[$\bullet$] {
+      $\pred(a + b) = a + \pred(b)$ whenever $\pred(b) \neq \no$ \textcolor{gray}{(possible)}
+    }
+  \end{itemize}
+
+  \vspace{0.5\baselineskip}
+
+  \par\textbf{Proof that \currentGoal.}
+  
+\end{frame}
+
+\begin{frame}[t]{Coinduction into $\coN$: \currentGoal} % .;
+  \simpleCoindNBlock
+
+  \vspace{0.5 \baselineskip}
+
+  \par\textbf{Proof that \currentGoal.}
+  \vspace{0.5 \baselineskip}
+  \begin{itemize}
+    \item[$\bullet$] {
+      Set $X := \coN^2$.
+    }
+    \item[$\bullet$] {
+      Set $\lhs(x, y) := x + y$.
+    }
+    \item[$\bullet$] {
+      Set $\rhs(x, y) := y + x$.
+    }
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}[t]{Coinduction into $\coN$: \currentGoal} % .;
+  \simpleCoindNBlock
+
+  \begin{itemize}
+    \item[$\bullet$] {
+      $\pred(a + b) = \pred(b)$ whenever $\pred(a) = \no$
+    }
+    \item[$\bullet$] {
+      $\pred(a + b) = \pred(a)$ whenever $\pred(b) = \no$
+    }
+  \end{itemize}
+
+  \vspace{0.5 \baselineskip}
+
+  \par\textbf{Proof that \currentGoal.}
+  \begin{itemize}
+    \item[$\bullet$] {
+      If $\pred(x) = \no$, then
+      \pause
+      \begin{align*}
+        [\pred(\lhs(x, y))]
+        &= \red{[\pred(x + y)]}
+        \\
+        &= \orange{[\pred(y)]}
+        \\
+        &= \green{[\pred(y + x)]}
+        \\
+        [\pred(\lhs(x, y))]
+        &= \cyan{[\pred(\rhs(x, y))]}
+      \end{align*}
+    }
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}[t]{Coinduction into $\coN$: \currentGoal} % .;
+  \simpleCoindNBlock
+
+  \begin{itemize}
+    \item[$\bullet$] {
+      $\pred(a + b) = \pred(a) + b$ whenever $\pred(a) \neq \no$
+    }
+    \item[$\bullet$] {
+      $\pred(a + b) = a + \pred(b)$ whenever $\pred(b) \neq \no$
+    }
+  \end{itemize}
+
+  \vspace{0.5 \baselineskip}
+
+  \par\textbf{Proof that \currentGoal.}
+  \begin{itemize}
+    \item[$\bullet$] {
+      If $\pred(x) \neq \no$, then
+      \pause
+      \begin{align*}
+        [\pred(\lhs(x, y))]
+        &= \red{[\pred(x + y)]}
+        \\
+        &= \orange{[\pred(x) + y]}
+        \\
+        &= \green{[\lhs(\pred(x), y)]}
+        \\
+        &= \cyan{[\rhs(\pred(x), y)]}
+        \\
+        &= \blue{[y + \pred(x)]}
+        \\
+        &= \pink{[\pred(y + x)]}
+        = [\pred(\rhs(x, y))]
+      \end{align*}
+    }
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}[t]{Coinduction into $\coN$: \currentGoal} % .;
+  \simpleCoindNBlock
+
+  \par\textbf{Proof that \currentGoal.}
+  \begin{itemize}
+    \item[$\bullet$] {
+      The theorem asserts $\lhs = \rhs$.
+      \qed
+    }
+  \end{itemize}
+  
+\end{frame}

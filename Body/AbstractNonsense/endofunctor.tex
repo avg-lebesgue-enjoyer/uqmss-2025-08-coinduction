@@ -1,0 +1,133 @@
+% Agenda:
+%   [x] Endofunctor
+%   [ ] General recursion principle
+%   [ ] General simple coinduction
+
+\begin{frame}{All the categories} % .;
+  
+  \par All of the inductive \texttt{data} types are \strongPink{initial algebras}.
+
+  \begin{block}{Initial algebras}
+    
+    \par Let $T : \mathcal{C} \to \mathcal{C}$ be an endofunctor.
+    \vspace{0.5 \baselineskip}
+    \pause
+    \par An \strong{algebra} for $T$ is an arrow $a \xrightarrow{\alpha} T(a)$ in $\mathcal{C}$.
+    \vspace{0.5 \baselineskip}
+    \pause
+    \par A \strong{morphism} from $a \xrightarrow{\alpha} T(a)$ to $b \xrightarrow{\beta} T(b)$ is an arrow $f : a \to b$ in $\mathcal{C}$ such that this commutes:
+    \begin{align*}
+      \begin{tikzcd}[cramped, ampersand replacement = \;]
+        a \arrow[r, "\alpha"] \arrow[d, "f"'] \; T(a) \arrow[d, "T(f)"] \\
+        b \arrow[r, "\beta"'] \; T(b)
+      \end{tikzcd}
+    \end{align*}
+    \vspace{-0.5 \baselineskip}
+    \pause
+    \par With identity and composite arrows as in $\mathcal{C}$, these form a category.
+    \vspace{0.5 \baselineskip}
+    \pause
+    \par An \strong{initial algebra} for $T$ is an initial object in this category.
+    
+  \end{block}
+
+\end{frame}
+
+\begin{frame}{Recursion/Induction} % .;
+
+  \par All of the inductive \texttt{data} types are \strongPink{initial algebras}.
+  
+  \pause
+  
+  \begin{block}{Recursion}
+
+    \par An \strong{initial algebra} for $T$ is an initial object $i \xrightarrow{\cons} T(i)$ in the category of $T$-algebras.
+    \vspace{0.5 \baselineskip}
+    \pause
+    \par The \strong{recursion principle} is its universal property.
+    
+  \end{block}
+
+\end{frame}
+
+\begin{frame}{Recursion/Induction} % .;
+  
+  \begin{block}{Induction}
+    
+    \par Let $i \xrightarrow{\cons} T(i)$ be an initial algebra.
+    \par Let $f, g : i \to a$ in $\mathcal{C}$.
+    \par Suppose the equaliser $\iota : e \rightarrowtail i$ of $f$ and $g$ exists in $\mathcal{C}$, and that $f \circ \cons \circ T(\iota) = g \circ \cons \circ T(\iota)$:
+    \vspace{-0.5 \baselineskip}
+    \begin{align*}
+      % NOTE: Vertical version of diagram
+      \begin{tikzcd}[cramped, ampersand replacement = \;]
+        % Top row
+          T(e)
+            \arrow[r, dashed]
+            \arrow[d, "T(\iota)"']
+          \;
+          e
+            \arrow[d, "\iota", tail]
+        \\
+        % Middle row
+          T(i)
+            \arrow[r, "\cons"]
+          \;
+          i
+            \arrow[d, "f"', shift right]
+            \arrow[d, "g", shift left]
+        \\
+        % Bottom row
+          % (blank)
+          \;
+          a
+      \end{tikzcd}
+    \end{align*}
+    \par Then, $f = g$.
+
+  \end{block}
+
+\end{frame}
+
+\begin{frame}{Corecursion/Coinduction} % .;
+
+  \par \strong{Turn all the arrows around.}
+
+  \pause
+  
+  \begin{block}{Coinduction}
+    
+    \par Let $T(j) \xrightarrow{\des} j$ be an initial algebra.
+    \par Let $f, g : a \to j$ in $\mathcal{C}$.
+    \par Suppose the coequaliser $\pi : j \twoheadrightarrow e$ of $f$ and $g$ exists in $\mathcal{C}$, and that this commutes:
+    \vspace{-0.5 \baselineskip}
+    \begin{align*}
+      % NOTE: Vertical version of diagram
+      \begin{tikzcd}[cramped, ampersand replacement = \;]
+        % Top row
+          a
+            \arrow[d, "f"', shift right]
+            \arrow[d, "g", shift left]
+          \;
+          % (blank)
+        \\
+        % Middle row
+          j
+            \arrow[r, "\des"]
+            \arrow[d, "\pi"', two heads]
+          \;
+          T(j)
+            \arrow[d, "T(\pi)"]
+        \\
+        % Bottom row
+          e
+            \arrow[r, dashed]
+          \;
+          T(e)
+      \end{tikzcd}
+    \end{align*}
+    \par Then, $f = g$.
+
+  \end{block}
+
+\end{frame}

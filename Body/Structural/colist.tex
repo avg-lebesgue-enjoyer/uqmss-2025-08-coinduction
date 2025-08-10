@@ -1,0 +1,181 @@
+% Agenda:
+%   [x] What is a list?
+%   [x] What is a colist?
+%   [x] Recursion/Corecursion
+%   [x] Induction/Coinduction
+%   [x] List example results proven coinductively
+
+\begin{frame}[t]{Lists} % .;
+  
+  \par Let $A$ be a set.
+
+  \begin{block}{Definition: Lists on $A$}
+
+    \par A \strong{list} on $A$ is a finite-length sequence of elements in $A$.
+    \pause
+    \begin{align*}
+      \List (A)
+      &:= \set*{
+        [], [a_0], [a_0, a_1], \ldots
+        \given a_0, a_1, \ldots \in A
+      }
+    \end{align*}
+    \pause
+    \par $\List(A)$ comes with a constant $[] \in \List(A)$, and an operation
+    \begin{align*}
+      \cons : A \x \List(A)
+      &\longrightarrow \List(A)
+      \\
+      (a_0, [a_1, \ldots])
+      &\longmapsto [a_0, a_1, \ldots]
+    \end{align*}
+
+  \end{block}
+
+\end{frame}
+
+\begin{frame}[t]{Colists} % .;
+  
+  \par Let $A$ be a set.
+
+  \begin{block}{Definition: Colists on $A$}
+
+    \par A \strong{colist} on $A$ is a finite-or-infinite sequence of elements in $A$.
+    \pause
+    \begin{align*}
+      \coList (A)
+      % &:= \set*{
+      %   [], [a_0], [a_0, a_1], \ldots
+      %   \given a_0, a_1, \ldots \in A
+      % }
+      &:= \List(A)
+      % \\
+      % &\quad 
+      \squ \set*{
+        [a_0, a_1, \ldots]
+        \given a_0, a_1, \ldots \in A
+      }
+    \end{align*}
+    \pause
+    \vspace{-\baselineskip}
+    \par $\coList(A)$ comes with an operation
+    \begin{align*}
+      \pop : \coList(A)
+      &\longrightarrow \No \squ \textcolor{gray}{(} A \x \coList(A) \textcolor{gray}{)}
+      \\
+      []
+      &\longmapsto \no
+      \\
+      [a_0, a_1, \ldots]
+      &\longmapsto (a_0, [a_1, \ldots])
+    \end{align*}
+
+  \end{block}
+
+\end{frame}
+
+\begin{frame}{Recursion/Corecursion} % .;
+
+  \begin{block}{Recursion principle}
+    
+    \par To define a function $u : \List(A) \to X$, it is enough to specify $u([])$ and to specify $u(\cons(a, \mathrm{as}))$ in terms of $a$ and $u(\mathrm{as})$.
+
+  \end{block}
+
+  \pause
+
+  \begin{block}{Corecursion principle}
+
+    \par To define a function $u : X \to \coList(A)$, it is enough to specify a partial function $f : X \nto A \x X$.
+    \pause
+    \begin{itemize}
+      \item[$\bullet$] {
+        $\pop(u(x)) = \no$ whenever $f(x) = \no$
+      }
+      \item[$\bullet$] {
+        $\pop(u(x)) = (a, u(x'))$ whenever $f(x) = (a, x')$
+      }
+    \end{itemize}
+    \pause
+    \par Think of $u(x) = [a_0, a_1, \ldots]$ as tracing the execution
+    \vspace{-0.5 \baselineskip}
+    \begin{align*}
+      x \xmapsto{f} (a_0, x') \xmapsto{f} (a_0, (a_1, x'')) \xmapsto{f} \cdots
+    \end{align*}
+    
+  \end{block}
+  
+\end{frame}
+
+\begin{frame}{Induction/Coinduction} % .;
+
+  \begin{block}{Induction principle}
+    
+    \par Let $\lhs, \rhs : \List(A) \to X$. If
+    \begin{itemize}
+      \item[$\bullet$] {
+        $\lhs([]) = \rhs([])$
+      }
+      \item[$\bullet$] {
+        $\lhs(\cons(a, \mathrm{as})) = \rhs(\cons(a, \mathrm{as}))$ whenever $\lhs(\mathrm{as}) = \rhs(\mathrm{as})$
+      }
+    \end{itemize}
+    then $\lhs = \rhs$.
+
+  \end{block}
+
+  \pause
+
+  \par Example theorems:
+  \begin{itemize}
+    \item[$\bullet$] {
+      \pink{Concatenation} of lists is \pink{associative}
+    }
+    \item[$\bullet$] {
+      \pink{Length of concatenation} is sum of lengths \textcolor{gray}{(induct from $\List$)}
+    }
+    \item[$\bullet$] {
+      $\List$ is a \pink{functor}
+    }
+    \item[$\bullet$] {
+      $\List$ has the \pink{``list comprehension'' applicative} from Haskell
+    }
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}{Induction/Coinduction} % .;
+
+  \begin{block}{Coinduction principle}
+    
+    \par Let $\lhs, \rhs : X \to \coList(A)$.
+    \par Let $[\blank] : \coList(a) \to \quot{\coList(A)}{\lhs = \rhs}$ be the quotient map.
+    \par If
+    \begin{align*}
+      \forall x \in X,\,
+      [\pop(\lhs(x))]
+      &= [\pop(\rhs(x))]
+    \end{align*}
+    (with $[\no] := \no$), then $\lhs = \rhs$.
+
+  \end{block}
+
+  \pause
+
+  \par Example theorems:
+  \begin{itemize}
+    \item[$\bullet$] {
+      \pink{Concatenation} of colists is \pink{associative}
+    }
+    \item[$\bullet$] {
+      \pink{Length of concatenation} is sum of lengths \textcolor{gray}{(coinduct into $\coN$)}
+    }
+    \item[$\bullet$] {
+      $\coList$ is a \pink{functor}
+    }
+    \item[$\bullet$] {
+      $\coList$ has the \pink{``ZipList'' applicative} from Haskell
+    }
+  \end{itemize}
+  
+\end{frame}

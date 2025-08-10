@@ -5,11 +5,14 @@
 % \newcommand{\r}{\to}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\coN}{\mathrm{co}\mathbb{N}}
+\DeclareMathOperator{\List}{List}
 \DeclareMathOperator{\coList}{coList}
 \DeclareMathOperator{\pop}{pop}
 \DeclareMathOperator{\tail}{tail}
 \DeclareMathOperator{\pred}{pred}
 \DeclareMathOperator{\Succ}{succ}
+\DeclareMathOperator{\cons}{cons}
+\DeclareMathOperator{\des}{des}
 \DeclareMathOperator{\wait}{wait}
 \DeclareMathOperator{\iter}{iterate}
 \newcommand{\strong}[1]{\textbf{#1}}
@@ -22,3 +25,28 @@
 \newcommand{\nto}{\nrightarrow}
 \newcommand{\tand}{\text{ and }}
 \newcommand{\tor}{\text{ or }}
+\newcommand{\quot}[2]{{#1}_{/ {#2}}}
+
+\newcommand{\simpleCoindN}{
+  \par If $\forall x \in X,\,
+    [\pred (\lhs (x))]
+    = [\pred (\rhs (x))]
+    \text{ in } \quot{\coN}{\lhs = \rhs}
+  $, then $\lhs = \rhs$.
+}
+\newcommand{\simpleCoindNBlock}{
+  \begin{block}{Theorem: Simple coinduction}
+    \simpleCoindN
+  \end{block}
+}
+
+\newcommand{\currentGoal}{}
+
+\newcommand{\red}[1]{\textcolor{red!50!white}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange!50!white}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\cyan}[1]{\textcolor{cyan!50!white}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue!50!white}{#1}}
+\newcommand{\pink}[1]{\textcolor{pink}{#1}}
+
+\newcommand{\Top}{\mathbf{Top}}

@@ -1,0 +1,60 @@
+% Agenda:
+%   [x] Thm. Simple coinduction
+%     [x] Proof sketch? --> include j.i.c
+
+\begin{frame}[t]{Coinduction into $\coN$} % .;
+
+  \par Given $f, g : X \to Y$, let $\quot{Y}{f = g}$ be the quotient of $Y$ by the smallest equivalence relation $\sim$ with $f(x) \sim g(x)$ for each $x \in X$.
+  \vspace{0.5 \baselineskip}
+  \pause
+  \par So, $[f(x)] = [g(x)]$ in $\quot{Y}{f = g}$.
+
+  \pause
+  
+  \begin{block}{Theorem: Simple coinduction}
+    \par Let $\lhs, \rhs : X \to \coN$ be two functions into $\coN$.
+    \par Let $[\blank] : \coN \to \quot{\coN}{\lhs = \rhs}$ be the quotient map.
+    \par If
+    \begin{align*}
+      \forall x \in X,\quad
+      [\pred (\lhs (x))]
+      &= [\pred (\rhs (x))]
+    \end{align*}
+    (with $[\no] := \no$){\pause}, then $\lhs = \rhs$.
+  \end{block}
+
+\end{frame}
+
+\begin{frame}[t]{Coinduction into $\coN$: proof sketch} % .;
+  
+  \begin{block}{Theorem: Simple coinduction}
+    \par If $\forall x \in X,\,
+      [\pred (\lhs (x))]
+      = [\pred (\rhs (x))]
+      \text{ in } \quot{\coN}{\lhs = \rhs}
+    $, then $\lhs = \rhs$.
+  \end{block}
+  \par\strong{Proof sketch.}
+  \par It follows that $[\pred^n (\lhs(x))] = [\pred^n (\rhs(x))]$ for all $n$ (with $\pred(\no) := \no$).
+  \pause
+  \begin{itemize}
+    \item[$\bullet$] {
+      If $\lhs(x) = n \in \N$, then
+      \begin{align*}
+        [\pred^{n + 1} (\rhs(x))]
+        = [\pred^{n + 1} (\lhs(x))]
+        = [\no]
+        = \no
+      \end{align*}
+      so $\pred^{n + 1} (\rhs(x)) = \no$, and hence $\rhs(x) = n = \lhs(x)$.
+    }\pause
+    \item[$\bullet$] {
+      If $\rhs(x) \in \N$, do the same thing.
+    }\pause
+    \item[$\bullet$] {
+      The only remaining case is $\lhs(x) = \infty = \rhs(x)$.
+    }\pause
+  \end{itemize}
+  \par Therefore, $\lhs = \rhs$. \qed
+
+\end{frame}

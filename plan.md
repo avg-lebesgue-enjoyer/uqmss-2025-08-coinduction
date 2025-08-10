@@ -1,10 +1,10 @@
-[ ] Vanilla Induction 
+[x] Vanilla Induction 
   [ ] Specify $\mathbb{N}$: Recursion principle, Constructors
   [ ] 2 examples of recursion (include `Nat.add`)
   [ ] Thm. Induction principle
   [ ] 2 examples of induction
 
-[ ] Vanilla Corecursion
+[x] Vanilla Corecursion
   [ ] Def $\coN := \mathbb{N} \squ \No$
   [ ] Def $\pred : \coN \r \coN$, *partial functions*
   [ ] Construction. Corecursion principle (call `corec := wait`)
@@ -15,7 +15,7 @@
   [ ] Examples: `CoList.length`, `coNat.add`
     [ ] (These exist in the Lean project, if you wanna demo them)
 
-[ ] Vanilla Coinduction
+[x] Vanilla Coinduction
   [ ] Thm. (Simple) Coinduction principle
     [ ] Note: Useful even if you don't know what the conats are! i.e. perfect for reasoning about corecursive functions
     [ ] Note: It gets rid of case-splitting on $\infty$
