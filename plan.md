@@ -25,6 +25,6 @@
   [ ] Ex: $\forall x, y \in \coN, x + y = y + x$
   [ ] Ex: Sketch of $\forall x, y, z \in \coN, (x + y) + z = x + (y + z)$
 
-[ ] Higher-level: Recursive structures, Structural induction
+[x] Higher-level: Recursive structures, Structural induction
 
-[ ] Higher-level: Corecursive structures, Simple coinduction
+[x] Higher-level: Corecursive structures, Simple coinduction
