@@ -3,3 +3,4 @@
 \beamer@sectionintoc {3}{Vanilla Coinduction}{40}{0}{3}
 \beamer@sectionintoc {4}{Structural Induction and Co-structural(?) Coinduction}{65}{0}{4}
 \beamer@sectionintoc {5}{Abstract Nonsense}{85}{0}{5}
+\beamer@sectionintoc {6}{Outroduction}{101}{0}{6}

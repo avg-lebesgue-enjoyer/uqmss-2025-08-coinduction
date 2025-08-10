@@ -1,9 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is '/Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.blg'
-[28] biber-darwin:340> INFO - === Sun Aug 10, 2025, 23:54:09
-[34] Biber.pm:419> INFO - Reading '/Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.bcf'
-[67] Biber.pm:979> INFO - Found 0 citekeys in bib section 0
-[72] bbl.pm:660> INFO - Writing '/Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.bbl' with encoding 'UTF-8'
-[72] bbl.pm:763> INFO - Output to /Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.bbl
-[72] Biber.pm:131> WARN - The file '/Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.bcf' does not contain any citations!
-[72] Biber.pm:133> INFO - WARNINGS: 1
+[28] biber-darwin:340> INFO - === Mon Aug 11, 2025, 00:07:44
+[35] Biber.pm:419> INFO - Reading '/Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.bcf'
+[69] Biber.pm:976> INFO - Using all citekeys in bib section 0
+[74] Biber.pm:4419> INFO - Processing section 0
+[78] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[78] bibtex.pm:1713> INFO - LaTeX decoding ...
+[80] bibtex.pm:1519> INFO - Found BibTeX data source '/Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/bibliography.bib'
+[89] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[89] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[89] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[89] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[93] bbl.pm:660> INFO - Writing '/Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.bbl' with encoding 'UTF-8'
+[94] bbl.pm:763> INFO - Output to /Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.bbl

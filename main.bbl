@@ -16,5 +16,150 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{six}{online}{}
+      \name{author}{1}{}{%
+        {{hash=2e0f6a60faa8a7f4cbb913bdc33f170d}{%
+           family={authors},
+           familyi={a\bibinitperiod},
+           prefix={nLab},
+           prefixi={n\bibinitperiod}}}%
+      }
+      \strng{namehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{fullhash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{bibnamehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{authorbibnamehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{authornamehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{authorfullhash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \field{extraname}{1}
+      \field{sortinit}{a}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{bisimulation}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://ncatlab.org/nlab/show/bisimulation
+      \endverb
+      \verb{url}
+      \verb https://ncatlab.org/nlab/show/bisimulation
+      \endverb
+    \endentry
+    \entry{seven}{online}{}
+      \name{author}{1}{}{%
+        {{hash=2e0f6a60faa8a7f4cbb913bdc33f170d}{%
+           family={authors},
+           familyi={a\bibinitperiod},
+           prefix={nLab},
+           prefixi={n\bibinitperiod}}}%
+      }
+      \strng{namehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{fullhash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{bibnamehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{authorbibnamehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{authornamehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{authorfullhash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \field{extraname}{2}
+      \field{sortinit}{a}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{coinduction}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://ncatlab.org/nlab/show/coinduction
+      \endverb
+      \verb{url}
+      \verb https://ncatlab.org/nlab/show/coinduction
+      \endverb
+    \endentry
+    \entry{five}{online}{}
+      \name{author}{1}{}{%
+        {{hash=2e0f6a60faa8a7f4cbb913bdc33f170d}{%
+           family={authors},
+           familyi={a\bibinitperiod},
+           prefix={nLab},
+           prefixi={n\bibinitperiod}}}%
+      }
+      \strng{namehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{fullhash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{bibnamehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{authorbibnamehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{authornamehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{authorfullhash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \field{extraname}{3}
+      \field{sortinit}{a}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{corecursion}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://ncatlab.org/nlab/show/corecursion
+      \endverb
+      \verb{url}
+      \verb https://ncatlab.org/nlab/show/corecursion
+      \endverb
+    \endentry
+    \entry{eight}{online}{}
+      \name{author}{1}{}{%
+        {{hash=2e0f6a60faa8a7f4cbb913bdc33f170d}{%
+           family={authors},
+           familyi={a\bibinitperiod},
+           prefix={nLab},
+           prefixi={n\bibinitperiod}}}%
+      }
+      \strng{namehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{fullhash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{bibnamehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{authorbibnamehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{authornamehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{authorfullhash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \field{extraname}{4}
+      \field{sortinit}{a}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{inductive type}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://ncatlab.org/nlab/show/inductive+type
+      \endverb
+      \verb{url}
+      \verb https://ncatlab.org/nlab/show/inductive+type
+      \endverb
+    \endentry
+    \entry{four}{online}{}
+      \name{author}{1}{}{%
+        {{hash=2e0f6a60faa8a7f4cbb913bdc33f170d}{%
+           family={authors},
+           familyi={a\bibinitperiod},
+           prefix={nLab},
+           prefixi={n\bibinitperiod}}}%
+      }
+      \strng{namehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{fullhash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{bibnamehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{authorbibnamehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{authornamehash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \strng{authorfullhash}{2e0f6a60faa8a7f4cbb913bdc33f170d}
+      \field{extraname}{5}
+      \field{sortinit}{a}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{terminal coalgebra for an endofunctor}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://ncatlab.org/nlab/show/terminal+coalgebra+for+an+endofunctor
+      \endverb
+      \verb{url}
+      \verb https://ncatlab.org/nlab/show/terminal+coalgebra+for+an+endofunctor
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
