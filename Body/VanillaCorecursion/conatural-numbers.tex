@@ -1,10 +1,10 @@
 % Agenda:
 %   [x] Define $\coN$, $\pred$
-%   [ ] Partial functions
-%   [ ] Corecursion principle ($\wait$)
+%   [x] Partial functions
+%   [x] Corecursion principle ($\wait$)
 %   [ ] Examples of corecursion
 
-\begin{frame}{The Conatural Numbers}
+\begin{frame}{The Conatural Numbers} % .;
 
   \begin{itemize}[nosep]
     \item[$\bullet$] $\eqmathbox[conat-n][l]{\N} \to \eqmathbox[conat-rec][l]{\text{Recursion}} \to \eqmathbox[conat-ind][l]{\text{Induction}}$
@@ -39,7 +39,7 @@
 
 \end{frame}
 
-\begin{frame}{Partial Functions}
+\begin{frame}{Partial Functions} % .;
   
   \begin{block}{Definition: Partial function}
 
@@ -70,6 +70,66 @@
 
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}{Corecursion into $\coN$} % .;
+
+  \begin{block}{Corecursion principle}
+    \par Let $f : X \nto X$ be a partial function. Construct $u : X \to \coN$ by{\pause}
+    \begin{itemize}[nosep]
+      \item[$\bullet$] $u(x) = 0 \iff f(x) = \no${\pause}
+      \item[$\bullet$] $u(x) = 1 \iff f(x) \neq \no \tand f(f(x)) = \no${\pause}
+      \item[$\bullet$] $u(x) = 2 \iff f(x) \neq \no \tand f(f(x)) \neq \no \tand f^3 (x) = \no$
+      \item[$\bullet$] etc.{\pause}
+      \item[$\bullet$] $u(x) = \infty \iff f(x) \neq \no \tand f^2 (x) \neq \no \tand \cdots${\pause}
+    \end{itemize}
+    \par Write $u := \wait (f)$.
+  \end{block}
+
+  \pause
+
+  \begin{block}{Lemma: Pred-wait}
+    
+    \par Let $f : X \nto X$ be a partial function and $x \in X$.
+    \begin{itemize}[nosep]
+      \item[$\bullet$] If $f(x) = \no$, then $\pred(\wait(f)(x)) = \no$.
+      \item[$\bullet$] If $f(x) = x' \neq \no$, then $\pred(\wait(f)(x)) = \wait(f)(x')$.
+    \end{itemize}
+
+  \end{block}
+
+  \par \textcolor{gray}{Abstract nonsense: $\pred$ is the terminal partial endo-function.}
+
+\end{frame}
+
+\begin{frame}{Corecursion into $\coN$: $\tail$} % .;
+  
+  \par Example:
+  \begin{itemize}
+    \item[$\bullet$] {
+      Let $\textcolor{pink}{\coList(X)}$ be the set of (finite or infinite) sequences on $X$.
+    }\pause
+    \item[$\bullet$] {
+      Let $\textcolor{pink}{\tail : \coList(X) \nto \coList(X)}$, with
+      \begin{align*}
+        \tail([x_0, x_1, \dots]) &= [x_1, \dots]
+        &\tail([]) &= \no
+      \end{align*}
+    }\pause
+    \item[$\bullet$] {
+      Then, $\wait(\tail)(x)$ is the length of $x$, possibly $= \infty$.
+    }\pause
+    \item[$\bullet$] {
+      The lemma says
+      \begin{align*}
+        \pred(\wait(\tail)([])) &= \no \\
+        \pred(\wait(\tail)([x_0, x_1, \dots])) &= \wait(\tail)([x_1, \dots])
+      \end{align*}
+    }
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Corecursion into $\coN$: addition} % .;
+  
+  \par 
 
 \end{frame}
