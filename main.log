@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.9)  11 AUG 2025 00:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.9)  11 AUG 2025 00:35
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1462,35 +1462,35 @@ File: uesint.fd
 
 ] [30
 
-]
-Overfull \hbox (12.88605pt too wide) detected at line 129
-[]
- []
-
-[31
+] [31
 
 ]
-Overfull \hbox (12.88605pt too wide) detected at line 129
+Overfull \hbox (12.88605pt too wide) detected at line 130
 []
  []
 
 [32
 
 ]
-Overfull \hbox (12.88605pt too wide) detected at line 129
+Overfull \hbox (12.88605pt too wide) detected at line 130
 []
  []
 
 [33
 
 ]
-Overfull \hbox (12.88605pt too wide) detected at line 129
+Overfull \hbox (12.88605pt too wide) detected at line 130
 []
  []
 
 [34
 
-] [35
+]
+Overfull \hbox (12.88605pt too wide) detected at line 130
+[]
+ []
+
+[35
 
 ] [36
 
@@ -1500,20 +1500,17 @@ Overfull \hbox (12.88605pt too wide) detected at line 129
 
 ] [39
 
-])) (./Body/VanillaCoinduction/submain.tex (./main.toc) [40
+] [40
 
-] (./Body/VanillaCoinduction/schema.tex [41
+])) (./Body/VanillaCoinduction/submain.tex (./main.toc) [41
 
-] [42
+] (./Body/VanillaCoinduction/schema.tex [42
 
 ] [43
 
 ] [44
 
-]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-[45
+] [45
 
 ]
 Missing character: There is no ; in font nullfont!
@@ -1535,32 +1532,31 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 [49
 
-]) (./Body/VanillaCoinduction/add-zero.tex [50
+]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+[50
 
-] [51
+]) (./Body/VanillaCoinduction/add-zero.tex [51
 
 ] [52
 
 ] [53
 
+] [54
+
 ]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-[54
+[55
 
-]) (./Body/VanillaCoinduction/add-commute.tex [55
-
-] [56
+]) (./Body/VanillaCoinduction/add-commute.tex [56
 
 ] [57
 
 ] [58
 
-]
-Overfull \vbox (5.02394pt too high) detected at line 123
- []
-
-[59
+] [59
 
 ]
 Overfull \vbox (5.02394pt too high) detected at line 123
@@ -1569,21 +1565,25 @@ Overfull \vbox (5.02394pt too high) detected at line 123
 [60
 
 ]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
+Overfull \vbox (5.02394pt too high) detected at line 123
+ []
+
 [61
 
-]) (./Body/VanillaCoinduction/other-properties.tex [62
+]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+[62
 
-] [63
+]) (./Body/VanillaCoinduction/other-properties.tex [63
 
 ] [64
 
-])) (./Body/Structural/submain.tex (./main.toc) [65
+] [65
 
-] (./Body/Structural/colist.tex [66
+])) (./Body/Structural/submain.tex (./main.toc) [66
 
-] [67
+] (./Body/Structural/colist.tex [67
 
 ] [68
 
@@ -1609,9 +1609,9 @@ Missing character: There is no ; in font nullfont!
 
 ] [79
 
-]) (./Body/Structural/others.tex [80
+] [80
 
-] [81
+]) (./Body/Structural/others.tex [81
 
 ] [82
 
@@ -1619,15 +1619,15 @@ Missing character: There is no ; in font nullfont!
 
 ] [84
 
-])) (./Body/AbstractNonsense/submain.tex (./main.toc) [85
+] [85
+
+])) (./Body/AbstractNonsense/submain.tex (./main.toc) [86
 
 ] (./Body/AbstractNonsense/endofunctor.tex
 LaTeX Font Info:    Trying to load font information for U+eus on input line 34.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
-) [86
-
-] [87
+) [87
 
 ] [88
 
@@ -1647,22 +1647,24 @@ File: ueus.fd 2013/01/14 v3.01 Euler Script
 
 ] [96
 
-]) (./Body/AbstractNonsense/top.tex [97
+] [97
 
-] [98
+]) (./Body/AbstractNonsense/top.tex [98
 
 ] [99
 
 ] [100
 
-])) (./Body/Outroduction/submain.tex (./main.toc) [101
+] [101
+
+])) (./Body/Outroduction/submain.tex (./main.toc) [102
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
 (Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 14.
 
-[102
+[103
 
 ]))
 \tf@nav=\write9
@@ -1684,18 +1686,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44648 strings out of 474116
- 921167 string characters out of 5743683
- 1999187 words of memory out of 5000000
+ 44650 strings out of 474116
+ 921188 string characters out of 5743683
+ 2000187 words of memory out of 5000000
  65891 multiletter control sequences out of 15000+600000
  571445 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,26n,123p,1129b,1588s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (102 pages, 591784 bytes).
+Output written on main.pdf (103 pages, 595062 bytes).
 PDF statistics:
- 3956 PDF objects out of 4296 (max. 8388607)
- 3212 compressed objects within 33 object streams
- 217 named destinations out of 1000 (max. 500000)
- 3201 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3992 PDF objects out of 4296 (max. 8388607)
+ 3242 compressed objects within 33 object streams
+ 219 named destinations out of 1000 (max. 500000)
+ 3231 words of extra memory for PDF output out of 10000 (max. 10000000)
 
