@@ -2,7 +2,7 @@
 %   [x] Define $\coN$, $\pred$
 %   [x] Partial functions
 %   [x] Corecursion principle ($\wait$)
-%   [ ] Examples of corecursion
+%   [x] Examples of corecursion
 
 \begin{frame}{The Conatural Numbers} % .;
 
@@ -16,7 +16,7 @@
   \begin{block}{Definition: Conatural numbers, Predecessor}
 
     \par The set of \strong{conatural numbers} is $\coN := \N \squ \Infty$.
-    \par The \strong{predecessor} operation is
+    \par The \strong{predecessor} operation is the bijection
     \begin{align*}
       \pred : \coN
       &\longrightarrow \No \squ \coN
@@ -100,36 +100,68 @@
 
 \end{frame}
 
-\begin{frame}{Corecursion into $\coN$: $\tail$} % .;
+\begin{frame}{Corecursion into $\coN$} % .;
   
   \par Example:
   \begin{itemize}
     \item[$\bullet$] {
-      Let $\textcolor{pink}{\coList(X)}$ be the set of (finite or infinite) sequences on $X$.
-    }\pause
-    \item[$\bullet$] {
-      Let $\textcolor{pink}{\tail : \coList(X) \nto \coList(X)}$, with
+      Let $\textcolor{pink}{c : \mathbb{Z}_{> 0} \nto \mathbb{Z}_{> 0}}$ by
       \begin{align*}
-        \tail([x_0, x_1, \dots]) &= [x_1, \dots]
-        &\tail([]) &= \no
+        c(1) &:= \no;
+        & c(n) &:= n / 2 \text{ if } n \text{ is even};
+        & c(n) &:= 3n + 1 \text{ otherwise}
       \end{align*}
+      \vspace{-\baselineskip}
     }\pause
     \item[$\bullet$] {
-      Then, $\wait(\tail)(x)$ is the length of $x$, possibly $= \infty$.
+      $\wait(c)(x)$ is the length of $x \xmapsto{c} \cdots \xmapsto{c} 1$, possibly $\infty$.
+      \newline
     }\pause
     \item[$\bullet$] {
-      The lemma says
-      \begin{align*}
-        \pred(\wait(\tail)([])) &= \no \\
-        \pred(\wait(\tail)([x_0, x_1, \dots])) &= \wait(\tail)([x_1, \dots])
-      \end{align*}
+      E.g. $5 \xmapsto{c} 16 \xmapsto{c} 8 \xmapsto{c} 4 \xmapsto{c} 2 \xmapsto{c} 1 \xmapsto{c} \no$, so $\wait(c)(5) = 5$.
+      \newline
+    }\pause
+    \item[$\bullet$] {
+      The \textcolor{pink}{Collatz conjecture} asks whether $\wait(c)(n) \neq \infty$ for all $n \in \mathbb{Z}_{> 0}$.
     }
   \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Corecursion into $\coN$: addition} % .;
+\begin{frame}{Corecursion into $\coN$} % .;
   
-  \par 
+  \begin{block}{Definition: Addition in $\coN$}
+    
+    \par The function $(\blank + \blank) : \coN \x \coN \to \coN$ is defined by
+    \begin{align*}
+      (\blank + \blank) := \wait(f)
+    \end{align*}
+    where $f : \coN \x \coN \nto \coN \x \coN$ is given by
+    \begin{align*}
+      f : (x, y)
+      &\mapsto
+      \begin{cases}
+        \no & \text{if } \pred(x) = \pred(y) = \no \\
+        (x, y') &\text{if } \pred(x) = \no \tand \pred(y) = y' \neq \no \\
+        (x', y) &\text{if } \pred(x) = x' \neq \no
+      \end{cases}
+    \end{align*}
+
+  \end{block}
+
+  \pause
+
+  \par By the pred-wait lemma,{\pause}
+  \begin{itemize}[nosep]
+    \item[$\bullet$] {
+      $\pred (0 + 0) = \no$, so $0 + 0 = 0$;
+    }\pause
+    \item[$\bullet$] {
+      $\pred(0 + y) = \pred(y)$, so $0 + y = y$;
+    }\pause
+    \item[$\bullet$] {
+      $\pred(x + y) = \pred(x) + y$ whenever $\pred(x) \neq \no$.
+    }
+  \end{itemize}
 
 \end{frame}
