@@ -1,0 +1,2 @@
+\beamer@sectionintoc {1}{Vanilla Induction}{4}{0}{1}
+\beamer@sectionintoc {2}{Vanilla Corecursion}{16}{0}{2}

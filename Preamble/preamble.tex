@@ -1,0 +1,453 @@
+% NOTE:
+% THIS PREAMBLE IS OUT OF DATE! IT'S DIFFERENT TO THE OTHER ONES BECAUSE BEAMER.
+
+% SECTION: PACKAGES
+\usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+\usepackage{amssymb}\usepackage{amsmath}\usepackage{amsthm}\usepackage{mathtools}
+\usepackage{tabularx}
+\usepackage{nicefrac}\usepackage{extarrows}
+\usepackage{graphicx}
+\usepackage{wrapfig}\usepackage{subcaption}
+\usepackage{eqparbox}
+\usepackage{listings}\usepackage[numbered]{matlab-prettifier}
+\usepackage[outputdir=build]{minted}
+\usepackage{cprotect}
+\usepackage{enumitem}
+\usepackage{esint}
+\usepackage{pdflscape}
+\usepackage{mdframed}
+\usepackage{tikz}\usetikzlibrary{automata,arrows,positioning,calc}
+\usepackage[outline]{contour}
+\usepackage{bookmark}
+\usepackage{anyfontsize} % NOTE: Not sure why I need this
+
+%%% INVERT PAGE COLOUR
+\usepackage{xcolor}
+\definecolor{LightGray}{gray}{0.9}
+%\pagecolor[rgb]{0.1,0.1,0.1}
+%\color[rgb]{1,1,1}
+
+%%% CITATIONS & BIBLIOGRAPHY
+\usepackage[backend=biber]{biblatex}
+% \usepackage[backend=bibtex]{biblatex}
+\addbibresource{bibliography.bib}
+
+%%% NOT \usepackage{geometry}
+%\usepackage{geometry}
+%\geometry{
+%  a4paper,
+%  total={150mm,237mm},
+%  left=30mm,
+%  top=30mm,
+%} % A4 dimensions: 210 x 297
+
+% \usepackage{tikz-among-us}
+\usepackage{tikz-among-us}
+
+%%% \usepackage{hyperref}
+% Load hyperref last!
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks = true,
+  linkcolor = cyan,
+  urlcolor = cyan,
+}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Repeat table of contents on each section
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Util
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\comment}[1]{}
+\newcommand{\attentive}[1]{\textcolor{pink}{#1}}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Double aligned inequalities
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% https://tex.stackexchange.com/a/34412/5764
+\makeatletter
+\NewDocumentCommand{\eqmathbox}{o O{c} m}{%
+  \IfValueTF{#1}
+    {\def\eqmathbox@##1##2{\eqmakebox[#1][#2]{$##1##2$}}}
+    {\def\eqmathbox@##1##2{\eqmakebox{$##1##2$}}}
+  \mathpalette\eqmathbox@{#3}
+}
+\makeatother
+
+\newcounter{twoineq}
+\newcommand{\fiveline}[5]{
+  #1 
+  &#2\; 
+  &\eqmathbox[\thetwoineq]{#3} 
+  &#4 
+  #5
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Matrix extension
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Standard symbols
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*\df{\mathop{}\!\mathrm{d}}
+\newcommand{\e}{\mathrm{e}}
+
+\newcommand{\deriv}[1]{\frac{\df}{\df #1}}
+\newcommand{\derivup}[2]{\frac{\df #1}{\df #2}}
+\newcommand{\pderiv}[1]{\frac{\partial}{\partial #1}}
+\newcommand{\pderivup}[2]{\frac{\partial #1}{\partial #2}}
+
+
+\newcommand{\powset}[1]{\mathcal{P}\left(#1\right)}
+\newcommand{\pre}{\leftarrow}
+
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\zero}{\mathbf{0}}
+
+\newcommand{\restrict}[2]{\left. #1 \right\rvert_{#2}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \set, my favourite <3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclarePairedDelimiterX\set[1]\lbrace\rbrace{\def\given{\;\delimsize\vert\;}#1}
+% Adaptation to parentheses, for conditional probabilities
+\DeclarePairedDelimiterX\cond[1]\lparen\rparen{\def\given{\;\delimsize\vert\;}#1}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Assignment-specific
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\q}[1]{\section*{Question #1} \stepcounter{section}}
+\newcommand{\sq}[2]{\subsection*{Question #1#2} \stepcounter{subsection}}
+\newcommand{\ssq}[3]{\subsubsection*{Question #1#2 part #3} \stepcounter{subsubsection}}
+
+\newcommand{\setq}[3]{
+  \setcounter{section}{#1}
+  \setcounter{subsection}{#2}
+  \setcounter{subsubsection}{#3}
+}
+\newcommand{\incq}{
+  \stepcounter{section}
+}
+\newcommand{\incsq}{
+  \stepcounter{subsection}
+}
+\newcommand{\incssq}{
+  \stepcounter{subsubsection}
+}
+
+\newcommand{\tq}{
+  \section*{
+    Question \arabic{section}
+  }
+}
+\newcommand{\tsq}{
+  \section*{
+    Question \arabic{section}\alph{subsection}
+  }
+}
+\newcommand{\tssq}{
+  \section*{
+    Question \arabic{section}\alph{subsection} part \roman{subsubsection}
+  }
+}
+
+\newcommand{\pf}{\par\textbf{Proof.}}
+\newcommand{\sol}{\par\textbf{Solution.}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Math operators
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Set theory
+\DeclareMathOperator{\card}{card}
+\newcommand{\img}{}
+\newcommand{\pimg}{{-1}}
+
+% Category theory
+\DeclareMathOperator{\Set}{\mathbf{Set}}
+\DeclareMathOperator{\Grp}{\mathbf{Grp}}
+\DeclareMathOperator{\Vect}{\mathbf{Vect}}
+\DeclareMathOperator{\NormedSpace}{\mathbf{NS}}
+
+% Linear algebra
+\DeclareMathOperator{\spans}{span}
+\DeclareMathOperator{\Lin}{\mathcal{L}}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\tr}{tr}
+
+% Matrix-vector
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\transpose}{{\top}}
+
+% Group theory
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\rng}{rng}
+
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Orb}{\mathcal{O}}
+
+% Common functions
+\DeclareMathOperator{\sgn}{sgn}
+
+% Real analysis
+
+% Complex analysis
+\let\Re\relax\DeclareMathOperator{\Re}{Re}
+\let\Im\relax\DeclareMathOperator{\Im}{Im}
+
+% Topology
+
+% Metric space topology
+\DeclareMathOperator{\diam}{diam}
+
+% Measure theory
+\newcommand{\Leb}{\mathcal{L}}
+\newcommand{\Haus}{\mathcal{H}}
+
+% Fractal geometry
+\DeclareMathOperator{\dimHaus}{\dim_{\mathcal{H}}}
+
+% Vector calculus
+\DeclareMathOperator{\divs}{div}
+\renewcommand{\div}{\divs}
+\DeclareMathOperator{\curl}{curl}
+
+% Probability theory
+\DeclareMathOperator{\PP}{\mathbb{P}}
+\DeclareMathOperator{\EE}{\mathbb{E}}
+\DeclareMathOperator{\Var}{\mathbb{V}ar}
+\DeclareMathOperator{\Cov}{\mathbb{C}ov}
+\newcommand{\widesim}[2][1.5]{
+  \mathrel{\overset{#2}{\scalebox{#1}[1]{$\sim$}}}
+}
+\newcommand{\simiid}{\widesim{\phantom{\text{.}}\text{iid}\phantom{\text{.}}}}
+
+\DeclareMathOperator{\Ber}{Ber}
+\DeclareMathOperator{\Bin}{Bin}
+\DeclareMathOperator{\Geom}{Geom}
+\DeclareMathOperator{\Poi}{Poi}
+\DeclareMathOperator{\Hyp}{Hyp}
+\DeclareMathOperator{\Unif}{\mathcal{U}}
+\DeclareMathOperator{\Exp}{Exp}
+\DeclareMathOperator{\Norm}{\mathcal{N}}
+\DeclareMathOperator{\Gam}{Gamma}
+
+% ??
+\DeclareMathOperator{\meas}{meas}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THEOREM STYLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Standard theorem styles
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\theoremstyle{break}
+%\newtheorem{theorem}{Theorem}[subsection]
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{corollary}[theorem]{Corollary}
+
+%\theoremstyle{remark}
+%\newtheorem{claim}[theorem]{Claim}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QED symbol
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\bsq}{\hfill$\blacksquare$}
+% Current QED symbol is:
+%   An amogus from \usepackage{tikz-among-us}
+\renewcommand{\qedsymbol}{
+  \begin{tikzpicture}
+    \amongUsIII[xscale = -0.04, yscale = 0.04]{black}{white}
+  \end{tikzpicture}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Misc
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\mcom}[1]{\text{\emph{#1}}}
+\newcommand{\smallclaim}{\par\textbf{Claim.}}
+\newcommand{\ab}[1]{{#1}^{\text{ab}}}
+\newcommand{\Sierpinski}{Sierpi\'nski}
+\DeclareMathOperator{\Size}{Size}
+\DeclareMathOperator{\vol}{vol}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Actually just memes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\brad}{\nabla}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% No idea what this is, but I'm afraid to delete it
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*\centermathcell[1]{\omit\hfil$\displaystyle#1$\hfil\ignorespaces}
+\newlength\wantedwidth
+\newcommand{\fakewidth}[2]{%
+  \settowidth{\wantedwidth}{\ensuremath{#2}}%
+  \makebox[\wantedwidth]{\ensuremath{#1}}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Obligatory
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\allowdisplaybreaks
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% UNUSED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{apacite}
+%\bibliographystyle{apacite} %This seems to work
+
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{lemma}{Lemma}[section]
+%\newtheorem{corollary}{Corollary}[section]
+%\newtheorem{proposition}{Proposition}[section]
+%\newtheorem{claim}{Claim}[section]
+
+%\newcommand{\mc}[2]{
+%    \left( \begin{array}{c} 
+%        #1 \\
+%        \alpha_0, \dots, \alpha_{#2}
+%    \end{array} \right)
+%}
+%\newcommand{\mcalpha}[1]{
+%    \left( \begin{array}{c} 
+%        #1 \\
+%        \alpha
+%    \end{array} \right)
+%}
+%\newcommand{\mcoeff}{
+%    \left( \begin{array}{c} 
+%        n \\
+%        \alpha_1, \alpha_2, \dots, \alpha_{C}
+%    \end{array} \right)
+%}
+%\newcommand{\smcoeff}{
+%    \left( \begin{array}{c} 
+%        n \\
+%        \alpha_1, \dots, \alpha_{C}
+%    \end{array} \right)
+%}
+%\newcommand{\imcoeff}{
+%    \left( \begin{array}{c} 
+%        n \\
+%        \alpha
+%    \end{array} \right)
+%}
+%\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+%\newcommand{\modbounds}{
+%    \begin{array}{c}
+%        \alpha_1 + \cdots + \alpha_{C} = \, n \\
+%        g_1^{\alpha_1} \cdots g_C^{\alpha_C} = g_\omega
+%    \end{array}
+%}
+%\newcommand{\imcoeffN}{\left( \begin{array}{c} 
+%        N \\
+%        \alpha
+%    \end{array} \right)
+%}
+%\newcommand{\ACGR}{A$\mathbb{C}$GR }
+%\newcommand{\ACGRs}{A$\mathbb{C}$GRs }
+%\newcommand{\acgreq}{\left| \gring{\mathbb{C}}{G} \right|}
+%\newcommand{\cgring}[1]{\gring{\mathbb{C}}{C_{#1}}}
+%\newcommand{\ccgring}[1]{\gring{\mathbb{C}}{#1}}
+%\newcommand{\diam}[1]{\mathrm{diam}\left(#1\right)}
+%\newcommand{\avg}[1]{\underset{#1}{\mathrm{avg}}}
+%\newcommand*\dm{\df \mu}
+%\newcommand*\dn{\df \nu}
+%\newcommand{\EC}[1]{\mathbb{E}\left(C_{#1}\right)}
+%\newcommand{\amax}{\alpha_{\mathrm{max}}}
+%\newcommand{\amin}{\alpha_{\mathrm{min}}}
+%\newcommand{\Rer}{\operatorname{Re}}
+%\newcommand{\Imr}{\operatorname{Im}}
+%\newcommand{\smax}{\sigma_{\mathrm{max}}}
+%\newcommand{\smin}{\sigma_{\mathrm{min}}}
+%\newcommand{\dom}[1]{\mathrm{dom}_{#1}}
+%\newcommand{\dommu}{\dom{\mu}}
+%\newcommand{\domleb}{\dom{\lambda}}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Notes to self
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NOTE TO SELF: SYNTAX FOR RECALLING THEOREMS
+%\begingroup
+%\def\thetheorem{\ref{thm_TheoremName}}
+%\begin{theorem} [Displayed text]
+%    Theorem text
+%\end{theorem}
+%\addtocounter{theorem}{-1}
+%\endgroup

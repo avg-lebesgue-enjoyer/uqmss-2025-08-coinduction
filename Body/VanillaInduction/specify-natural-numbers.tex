@@ -1,0 +1,49 @@
+% Agenda:
+%   [x] Specify the naturals
+%   [x] Examples of recursion
+
+\begin{frame}{The Natural Numbers}
+  
+  \par $\text{Coinduction} \leftarrow \text{Corecursion} \leftarrow \text{Recursion} \leftarrow \N$.
+
+  \pause
+
+  \begin{block}{Loose Definition}
+    \par The set of \strong{natural numbers} is $\N := \set*{0, 1, \dots}$, ``freely generated'' by the constant $0$ and the successor operation $\Succ : x \mapsto x + 1$.
+  \end{block}
+
+  \pause
+
+  \begin{block}{Recursion Principle}
+    \par Given a set $X$, a constant $x_0 \in X$, and an operation $f : X \to X$, there is a unique map $u : \N \to X$ with
+    \begin{align*}
+      u : 0 &\mapsto x_0 \\
+      u : \Succ (n) &\mapsto f (u (n))
+    \end{align*}
+    \par We'll write $u := \iter (f, x_0)$.
+  \end{block}
+
+\end{frame}
+
+\begin{frame}{Recursion from $\N$}
+
+  \begin{block}{Example: Powers}
+    \par The function $u : \N \to \mathbb{R}$, $u : n \mapsto 3^n$ is defined recursively by
+    \begin{align*}
+      u : 0 &\mapsto 1
+      & u : \Succ (n) &\mapsto 3^n \cdot n
+      \\
+      \textcolor{gray}{3^0} &\mathbin{\textcolor{gray}{:=}} \textcolor{gray}{1}
+      & \textcolor{gray}{3^{\Succ (n)}} &\mathbin{\textcolor{gray}{:=}} \textcolor{gray}{3^n \cdot n}
+    \end{align*}
+  \end{block}
+
+  \begin{block}{Example: Addition on $\N$}
+    \par The function $(\blank + \blank) : \N \x \N \to \N$ is defined recursively by
+    \begin{align*}
+      0 + y           &:= y
+      & \Succ(x) + y  &:= \Succ(x + y)
+    \end{align*}
+  \end{block}
+
+\end{frame}

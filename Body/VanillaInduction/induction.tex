@@ -1,0 +1,62 @@
+% Agenda:
+%   [ ] Thm. induction
+%   [ ] Examples of induction
+
+\begin{frame}{Induction from $\N$}
+  
+  % \begin{block}{Theorem: Vanilla induction}
+  %   \par Let $P : \N \to \Bool$ be a predicate on $\N$. If
+  %   \begin{align*}
+  %     P (0)
+  %     \text{ and } (\forall n \in \N,\, P (n) \implies P (\Succ (n)))
+  %   \end{align*}
+  %   then $\forall n \in \N,\, P(n)$.
+  % \end{block}
+
+  % \pause
+
+  \begin{block}{Theorem: Simple induction}
+    \par Let $\lhs, \rhs : \N \to X$ be two functions out of $\N$. If
+    \begin{itemize}[nosep]
+      \item[$\bullet$] $\lhs(0) = \rhs(0)$, and
+      \item[$\bullet$] $(\forall n \in \N,\, \lhs(n) = \rhs(n) \implies \lhs( \Succ (n) ) = \rhs ( \Succ (n) ))$
+    \end{itemize}
+    then $\lhs = \rhs$.
+  \end{block}
+
+\end{frame}
+
+\begin{frame}{Induction from $\N$}
+
+  \begin{block}{Theorem: Simple induction}
+    \par Let $\lhs, \rhs : \N \to X$ be two functions out of $\N$. If
+    \begin{itemize}[nosep]
+      \item[$\bullet$] $\lhs(0) = \rhs(0)$, and
+      \item[$\bullet$] $(\forall n \in \N,\, \lhs(n) = \rhs(n) \implies \lhs( \Succ (n) ) = \rhs ( \Succ (n) ))$
+    \end{itemize}
+    then $\lhs = \rhs$.
+  \end{block}
+
+  \begin{align*}
+    0 + y &:= y 
+    & \Succ(x) + y &:= \Succ(x + y)
+  \end{align*}
+
+  \pause
+  
+  \begin{block}{Example: $\forall n \in \N,\, n + 0 = n$}
+    
+    \pause
+
+    \par Let $\lhs : n \mapsto n + 0$ and $\rhs : n \mapsto n$. Then,
+    \pause
+    \begin{itemize}[nosep]
+      \item[$\bullet$] $\lhs(0) = 0 + 0 = 0 = \rhs(0)$; \pause
+      \item[$\bullet$] $\lhs(\Succ(n)) = \Succ(n) + 0 = \Succ(n + 0) \mathbin{\textcolor{magenta}{=}} \Succ(n) = \rhs(\Succ(n))$;
+    \end{itemize}
+    \pause
+    so $\lhs = \rhs$.
+
+  \end{block}
+
+\end{frame}

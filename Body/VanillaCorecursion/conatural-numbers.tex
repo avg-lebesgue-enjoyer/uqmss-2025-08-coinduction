@@ -1,0 +1,75 @@
+% Agenda:
+%   [x] Define $\coN$, $\pred$
+%   [ ] Partial functions
+%   [ ] Corecursion principle ($\wait$)
+%   [ ] Examples of corecursion
+
+\begin{frame}{The Conatural Numbers}
+
+  \begin{itemize}[nosep]
+    \item[$\bullet$] $\eqmathbox[conat-n][l]{\N} \to \eqmathbox[conat-rec][l]{\text{Recursion}} \to \eqmathbox[conat-ind][l]{\text{Induction}}$
+    \item[$\bullet$] $\eqmathbox[conat-n]{\coN} \to \eqmathbox[conat-rec]{\text{Corecursion}} \to \eqmathbox[conat-ind]{\text{Coinduction}}$
+  \end{itemize}
+
+  \pause
+
+  \begin{block}{Definition: Conatural numbers, Predecessor}
+
+    \par The set of \strong{conatural numbers} is $\coN := \N \squ \Infty$.
+    \par The \strong{predecessor} operation is
+    \begin{align*}
+      \pred : \coN
+      &\longrightarrow \No \squ \coN
+      \\
+      0
+      &\longmapsto \no
+      \\
+      \Succ(n)
+      &\longmapsto n
+      \\
+      \infty
+      &\longmapsto \infty
+    \end{align*}
+  \end{block}
+
+  \pause
+
+  \par $\N$ comes with $\No \squ \N \xrightarrow{(0, \Succ)} \N$.
+  \par $\coN$ comes with $\coN \xrightarrow{\pred} \No \squ \N$.
+
+\end{frame}
+
+\begin{frame}{Partial Functions}
+  
+  \begin{block}{Definition: Partial function}
+
+    \par A \strong{partial function} $X \nrightarrow Y$ is a function $X \to \No \squ Y$.
+
+  \end{block}
+
+  \par Examples:\pause
+  \begin{itemize}
+    \item[$\bullet$] {
+      $f : x \mapsto 1 / x : \mathbb{R} \nto \mathbb{R}$;
+      \newline
+      $f(0) = \no$.
+      \newline
+    }\pause
+    \item[$\bullet$] {
+      ``Get input from user'' $: \texttt{ComputerState} \nto \texttt{String}$;
+      \newline
+      Fails when the user doesn't give input.
+      \newline
+    }\pause
+    \item[$\bullet$] {
+      $\pred : \coN \nto \coN$;
+      \newline
+      $\pred(0)$ fails.
+    }
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{}
+
+\end{frame}

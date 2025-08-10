@@ -1,0 +1,9 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is '/Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.blg'
+[33] biber-darwin:340> INFO - === Sun Aug 10, 2025, 17:15:15
+[47] Biber.pm:419> INFO - Reading '/Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.bcf'
+[96] Biber.pm:979> INFO - Found 0 citekeys in bib section 0
+[101] bbl.pm:660> INFO - Writing '/Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.bbl' with encoding 'UTF-8'
+[101] bbl.pm:763> INFO - Output to /Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.bbl
+[102] Biber.pm:131> WARN - The file '/Users/gabriel/Documents/UQ/Student/Courses/UQMSS-Math-Talks/2025-08-15-Coinduction/main.bcf' does not contain any citations!
+[102] Biber.pm:133> INFO - WARNINGS: 1
